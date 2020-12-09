@@ -16,6 +16,7 @@ import AMCHarts from "./pages/amCharts/AMCharts";
 import Plotly from "./pages/plotly/Plotly";
 import LightningChart from "./pages/lightningchart/LightningChart";
 import ReactCharts from "./pages/reactCharts/ReactCharts";
+import ApexCharts from "./pages/apexCharts/ApexCharts";
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
           <Link to="/plotly-js">Plotly.js</Link>
           <Link to="/lcjs">Lightingchart</Link>
           <Link to="/react-charts">React Charts</Link>
+          <Link to="/apex-charts">Apex Charts</Link>
         </div>
         <Switch>
           <Route path="/chartjs">
@@ -48,6 +50,9 @@ function App() {
           </Route>
           <Route path="/react-charts">
             {chartWithConfig(ReactCharts)}
+          </Route>
+          <Route path="/apex-charts">
+            {chartWithConfig(ApexCharts)}
           </Route>
           <Redirect to="/chartjs"/>
         </Switch>
