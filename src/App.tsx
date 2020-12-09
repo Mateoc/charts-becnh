@@ -7,12 +7,15 @@ import {
   Switch
 } from 'react-router-dom';
 import './App.scss';
+
+import chartWithConfig from "./componenets/chartWithConfig";
+
 import ChartJS from "./pages/chartjs/Chartjs";
 import GoogleChats from "./pages/googleCharts/GoogleCharts";
-import chartWithConfig from "./componenets/chartWithConfig";
 import AMCHarts from "./pages/amCharts/AMCharts";
 import Plotly from "./pages/plotly/Plotly";
 import LightningChart from "./pages/lightningchart/LightningChart";
+import ReactCharts from "./pages/reactCharts/ReactCharts";
 
 
 function App() {
@@ -25,6 +28,7 @@ function App() {
           <Link to="/am-charts">amCharts</Link>
           <Link to="/plotly-js">Plotly.js</Link>
           <Link to="/lcjs">Lightingchart</Link>
+          <Link to="/react-charts">React Charts</Link>
         </div>
         <Switch>
           <Route path="/chartjs">
@@ -41,6 +45,9 @@ function App() {
           </Route>
           <Route path="/lcjs">
             {chartWithConfig(LightningChart)}
+          </Route>
+          <Route path="/react-charts">
+            {chartWithConfig(ReactCharts)}
           </Route>
           <Redirect to="/chartjs"/>
         </Switch>
