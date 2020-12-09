@@ -9,6 +9,7 @@ function Plotly({points}: { points: number }){
   }
 
   return (
+    <div style={{ width: '90%', height: '500px', margin: '0 auto'}}>
     <Plot
       data={[
         {
@@ -17,9 +18,21 @@ function Plotly({points}: { points: number }){
           mode: 'lines'
         },
       ]}
-      layout={{width: 1800, height: 500, title: 'A Fancy Plot'}}
+      layout={{
+        autosize: true,
+        margin: {
+          l: 20,
+          r: 20,
+          b: 30,
+          t: 20,
+          pad: 4
+        },
+      }}
+      useResizeHandler={true}
+      style={{width: '100%', height: '100%'}}
       //config={{staticPlot: true}}
     />
+    </div>
   );
 
 }
